@@ -8,6 +8,12 @@ require("dotenv").config();
 // Middleware to parse the body of the request
 app.use(express.json());
 
+const userRoutes = require('./routes/user');
+
+// Mount the API
+app.use("/api/v1/",userRoutes);
+
+
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT,()=>{

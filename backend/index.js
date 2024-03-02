@@ -16,7 +16,10 @@ app.listen(PORT,()=>{
 
 });
 
+const dbConnect = require('./config/database');
+dbConnect();
+
 app.get('/',(req,res)=>{
 
   res.send(`<h1>Backend is running</h1>`)
-})
+});

@@ -1,6 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+
 
 function HomePage() {
+
+    const [empData , setEmpData] = useState();
+
+    const getData = async()=>{
+        try{
+
+            const response = await axios.get("/api/v1/getallUsers");
+            // const data = response.json();
+            console.log(response.data);
+            setEmpData(response.data);
+            // console.log(empData);
+        }
+
+        catch(error){
+
+            console.log(error.message);
+
+        }
+    }
+
+    useEffect(()=>{
+
+        getData();
+    },[]);
+
   return (
     <>
         <section className='w-full max-w-[90%] min-h-screen mx-auto mt-4 flex flex-col'>
@@ -18,8 +45,34 @@ function HomePage() {
             </div>
 
             {/* Employee Details Table */}
-            <div>
+            <div className='bg-white'>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            <th>Title</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
 
+                    <tbody className='bg-white'>
+                        {
+                            empData?.data.map((person)=>{
+                                <tr key={person._id}>
+                                    <td>
+                                        <div>
+                                            <div className='w-10 h-10'>
+                                                <img className="w-full h-full rounded-full object-cover" src={person.image}></img>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            })
+                        }
+                    </tbody>
+                </table>
             </div>
 
         </section>

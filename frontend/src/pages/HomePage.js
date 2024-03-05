@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 
-
 function HomePage() {
 
-    const [empData , setEmpData] = useState();
+    const [empData , setEmpData] = useState([]);
 
     const getData = async()=>{
         try{
 
             const response = await axios.get("/api/v1/getallUsers");
-            // const data = response.json();
-            console.log(response.data);
-            setEmpData(response.data);
+            setEmpData(response.data.data);
             // console.log(empData);
         }
 
@@ -27,6 +24,8 @@ function HomePage() {
 
         getData();
     },[]);
+
+    console.log(empData);
 
   return (
     <>
@@ -45,9 +44,9 @@ function HomePage() {
             </div>
 
             {/* Employee Details Table */}
-            <div className='bg-white'>
-                <table>
-                    <thead>
+            <div className=''>
+                <table className='w-full divide-y divide-gray-200'>
+                    <thead className='bg-gray-50 dark:bg-gray-800'>
                         <tr>
                             <th>Employee</th>
                             <th>Title</th>
@@ -55,10 +54,11 @@ function HomePage() {
                         </tr>
                     </thead>
 
-                    <tbody className='bg-white'>
+                    <tbody className=''>
                         {
-                            empData?.data.map((person)=>{
-                                <tr key={person._id}>
+                            empData.map((person)=>(
+                                <tr key={person.name}>
+                                    {/* Image, Name & Email */}
                                     <td>
                                         <div>
                                             <div className='w-10 h-10'>
@@ -76,10 +76,24 @@ function HomePage() {
                                             </div>
                                         </div>
                                     </td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            })
+                                    {/* Title */}
+                                    <td>
+                                        <div>
+                                            <div>
+                                                <p>{person.title}</p>
+                                            </div>
+                                            <div>
+                                                <p>{person.dpartment}</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    {/* Role */}
+                                    <td>
+                                        <div>
+                                            {person.role}
+                                        </div>
+                                    </td>
+                                </tr>))
                         }
                     </tbody>
                 </table>

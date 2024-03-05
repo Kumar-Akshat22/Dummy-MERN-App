@@ -64,6 +64,16 @@ function HomePage() {
                                             <div className='w-10 h-10'>
                                                 <img className="w-full h-full rounded-full object-cover" src={person.image}></img>
                                             </div>
+
+                                            <div>
+                                                <div>
+                                                    <h2>{person.name}</h2>
+                                                </div>
+
+                                                <div>
+                                                    <span>{person.email}</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </td>
                                     <td></td>

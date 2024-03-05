@@ -13,6 +13,13 @@ const userRoutes = require('./routes/user');
 // Mount the API
 app.use("/api/v1/",userRoutes);
 
+// Cross-Origin Resource Sharing 
+var cors = require("cors");
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 const PORT = process.env.PORT || 4000;
 

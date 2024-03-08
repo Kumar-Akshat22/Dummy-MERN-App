@@ -37,7 +37,7 @@ function CreateEmployeePage() {
 
             <div className='text-white'>
               <h1 className='text-4xl font-bold'>Create a Employee</h1>
-              <span onClick={backWards} className='flex items-center gap-2 mt-2 text-indigo-600 font-medium'>
+              <span onClick={backWards} className='flex items-center gap-2 mt-2 text-indigo-600 font-medium cursor-pointer hover:text-indigo-700 hover:underline transition-all duration-200'>
                 
                 <FaBackward />
                 Back to all Employee List

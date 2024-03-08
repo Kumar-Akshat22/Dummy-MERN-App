@@ -1,33 +1,36 @@
 import React from 'react'
 import EmployeeForm from '../components/EmployeeForm'
-import FormImage from "../assets/Form Page.jpg"
+import formImage from "../assets/formImage.jpg"
 
 function CreateEmployeePage() {
   return (
     <section>
-      <div className=''>
-        <div className='relative'> 
-          <div>
-            <img src={FormImage} width="1260" height="750"></img>
+      <div className='flex'>
+        <div className='relative pb-24'> 
+          <div className='w-[720px] h-[690px]'>
+            <img className="h-full w-full object-cover object-top" src={formImage}></img>
           </div>
 
           {/* Gradient */}
-          <div></div>
+          <div className='absolute inset-0 bg-gradient-to-t from-black to-transparent'></div>
 
           {/* Text */}
-          <div className='w-full max-w-lg absolute bottom-6 left-[20%]'>
+          <div className='w-full max-w-[30rem] absolute bottom-[8rem] left-[12%]'>
             <p className='text-white text-4xl font-bold'>Empower your business with our employee creation!</p>
           </div>
 
         </div>
-        <div>
+        <div className='w-full flex flex-col px-8 py-10 items-center max-w-xl'>
 
-          <div>
-            <h1>Create a Employee</h1>
-            <span>Back to all Employee List</span>
-          </div>
+          
 
-          <EmployeeForm />
+            <div className='text-white'>
+              <h1 className='text-4xl font-bold'>Create a Employee</h1>
+              <span>Back to all Employee List</span>
+            </div>
+
+            <EmployeeForm />
+          
         </div>
 
 
@@ -36,4 +39,4 @@ function CreateEmployeePage() {
   )
 }
 
-export default CreateEmployeePage
+export default CreateEmployeePage;

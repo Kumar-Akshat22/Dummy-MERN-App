@@ -1,8 +1,19 @@
 import React from 'react'
 import EmployeeForm from '../components/EmployeeForm'
 import formImage from "../assets/formImage.jpg"
+import { Navigate, useNavigate } from 'react-router-dom'
+import {FaBackward} from "react-icons/fa"
 
 function CreateEmployeePage() {
+
+  const Navigate = useNavigate();
+  function backWards(){
+
+    Navigate(-1);
+
+  }
+
+  
   return (
     <section>
       <div className='flex'>
@@ -26,7 +37,11 @@ function CreateEmployeePage() {
 
             <div className='text-white'>
               <h1 className='text-4xl font-bold'>Create a Employee</h1>
-              <span>Back to all Employee List</span>
+              <span onClick={backWards} className='flex items-center gap-2 mt-2 text-indigo-600 font-medium'>
+                
+                <FaBackward />
+                Back to all Employee List
+              </span>
             </div>
 
             <EmployeeForm />

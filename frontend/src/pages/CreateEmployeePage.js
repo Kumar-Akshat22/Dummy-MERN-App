@@ -16,7 +16,8 @@ function CreateEmployeePage() {
   
   return (
     <section>
-      <div className='flex'>
+      <div className='w-full flex justify-between'>
+
         <div className='relative pb-24'> 
           <div className='w-[720px] h-[690px]'>
             <img className="h-full w-full object-cover object-top" src={formImage}></img>
@@ -31,23 +32,23 @@ function CreateEmployeePage() {
           </div>
 
         </div>
-        <div className='w-full flex flex-col px-8 py-10 items-center max-w-xl'>
 
-          
+        <div className='w-full flex py-10 px-10'>
 
-            <div className='text-white'>
-              <h1 className='text-4xl font-bold'>Create a Employee</h1>
+            <div>
+              <h1 className='text-4xl font-bold text-white'>Create a Employee</h1>
               <span onClick={backWards} className='flex items-center gap-2 mt-2 text-indigo-600 font-medium cursor-pointer hover:text-indigo-700 hover:underline transition-all duration-200'>
                 
                 <FaBackward />
                 Back to all Employee List
               </span>
-            </div>
 
-            <EmployeeForm />
+              <EmployeeForm />
+
+            </div>
+            
           
         </div>
-
 
       </div>
     </section>

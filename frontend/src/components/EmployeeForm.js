@@ -20,10 +20,11 @@ function EmployeeForm() {
 
   const submitHandler = async(event) => {
 
+    console.log(formData);
     event.preventDefault();
     try{
 
-      const formResponse = axios.put("/api/v1/createUser" , formData);
+      const formResponse = await axios.post("/api/v1/createUser" , formData);
       console.log('Form Response' , formResponse);
       navigate('/');
     }
@@ -84,7 +85,7 @@ function EmployeeForm() {
           </div>
 
           <div>
-            <button className='flex items-center gap-1' type='submit'>
+            <button className='flex items-center gap-1 text-white' type='submit'>
               Create Employee
               <FaAngleRight />
             </button>

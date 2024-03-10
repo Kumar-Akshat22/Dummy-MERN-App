@@ -85,9 +85,22 @@ function EmployeeForm() {
           </div>
 
           <div>
-            <button className='w-full flex justify-center gap-1 text-white' type='submit'>
+            <button className='w-full inline-flex justify-center items-center text-white bg-indigo-600 px-3 py-2 rounded-md text-base font-semibold leading-7 hover:bg-indigo-500 transition-all duration-200' type='submit'>
               Create Employee
-              <FaAngleRight />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="ml-2 h-4 w-4 mt-1"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                />
+              </svg>
             </button>
           </div>
         </div>

@@ -35,7 +35,7 @@ function CreateEmployeePage() {
 
         <div className='w-full flex py-10 px-10'>
 
-            <div>
+            <div className='w-full'>
               <h1 className='text-4xl font-bold text-white'>Create a Employee</h1>
               <span onClick={backWards} className='flex items-center gap-2 mt-2 text-indigo-600 font-medium cursor-pointer hover:text-indigo-700 hover:underline transition-all duration-200'>
                 
